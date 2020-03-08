@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eVotingSystem.Mobile.Views.LoginPage"
+             xmlns:a="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:vm="clr-namespace:eVotingSystem.Mobile.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout 
+            VerticalOptions="Center"
+            Padding="5">
+            <Label Text="Welcome to eVotingSystem" 
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Header" />
+            <Label Text="Username" FontSize="24"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Username}"></Entry>
+            <Label Text="Password"  FontSize="24"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Password}" IsPassword="True" ></Entry>
+            <Label VerticalOptions="Center" Text="{Binding Loading}"></Label>
+            <Button Text="Log In" BackgroundColor="LightBlue" Command="{Binding LoginCommand}"></Button>
+            <Label VerticalOptions="Center" Text="{Binding Error}"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
